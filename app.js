@@ -3,22 +3,17 @@ const bodyParser=require("body-parser");
 const ejs=require("ejs");
 const mongoose=require("mongoose");
 const encrypt= require("mongoose-encryption");
-
+const offcampusRoutes=require("./api/routes/offcampusRoutes");
+const oncampusRoutes=require("./api/routes/oncampusRoutes");
 const app=express();
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 
-// mongoose.connect("mongodb://localhost:27017/userDB");
+mongoose.connect("mongodb://localhost:27017/PlacementDB",{useNewUrlParser: true,useUnifiedTopology: true});
 
-// const userSchema= new mongoose.Schema({
-//     email: String,
-//     password: String
-// });
+offcampusRoutes(app);
 
-// const secret= "kuch vi";
-// userSchema.plugin(encrypt,{secret: secret, encryptedFields: ["password"]});
-// const User=new mongoose.model("User",userSchema);
 
 app.get("/",function(req,res){
     res.render("home");
