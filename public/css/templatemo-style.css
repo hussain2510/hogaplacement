@@ -393,9 +393,12 @@
   -----------------------------------------*/
 
   .feature-thumb {
-    border: 1px solid #f0f0f0;
+    background-color: #000000;
+    border-radius: 22px;
+    color: #ffffff;
     padding: 5em 3em;
   }
+
 
   .feature-thumb span {
     background: #3f51b5;
@@ -413,6 +416,7 @@
 
   .feature-thumb h3 {
     margin: 10px 0;
+    color: #ffffff;
   }
 
 
