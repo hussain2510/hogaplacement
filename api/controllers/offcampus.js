@@ -15,8 +15,5 @@ exports.create=(req,res)=>{
     res.send("successful");
 }
 exports.get_all_offcampus=(req,res)=>{
-    OffCampus.find(function(err,companies){
-        console.log(companies);
-        res.send(companies);
-    })
+    res.render("offCampus")
 }
