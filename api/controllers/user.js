@@ -1,5 +1,7 @@
 const User=require("../models/user");
+require('dotenv').config();
 const bcrypt=require("bcrypt");
+const jwt=require("jsonwebtoken");
 const _ = require('lodash');
 exports.login = (req, res) => {
 
@@ -47,14 +49,22 @@ exports.login = (req, res) => {
         'status'
       ]);
       
-    //    return res.status(201).json({
-    //       success:true,
-    //       title:'Login Successful',
-    //       obj:userFiltered
-    //     })
-    res.render("oncampus");
+      //  return res.status(201).json({
+      //     success:true,
+      //     title:'Login Successful',
+      //     obj:userFiltered
+      //   })
+
+    // res.render("oncampus");
+
+
+      //creating token and storing it in the browser
+      const token=jwt.sign({_id:user._id},process.env.TOKEN_SECRET);
+      res.cookie("jwt",token,{
+        httpOnly:true
+      });
+      res.redirect("/onCampus");
       }
-  
       }
     })
   }
@@ -92,7 +102,7 @@ exports.signUp= (req, res) => {
     //   });
       // or
       // res.send(userFiltered)
-      res.render("oncampus",{success:true});
+      res.redirect("/login");
     }
   
   });

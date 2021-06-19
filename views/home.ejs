@@ -79,7 +79,7 @@
                                    <div class="container">
                                         <div class="col-md-6 col-sm-12">
                                              <h1>Get information about OffCampus Job</h1>
-                                             <a href="/offCampus" class="section-btn btn btn-default smoothScroll">Discover</a>
+                                             <a href="/offcampus" class="section-btn btn btn-default smoothScroll" name="hello" value="das">Discover</a>
                                         </div>
                                    </div>
                               </div>
@@ -169,9 +169,9 @@
 
                     <div class="col-md-offset-1 col-md-4 col-sm-12">
                          <div class="entry-form">
-                              <form action="" method="post">
+                              <form action="/create/notify" method="post">
                                    <h2>Subscribe to our Job Notification</h2>
-                                   <input type="text" name="full name" class="form-control" placeholder="Full name" required="">
+                                   <input type="text" name="fullName" class="form-control" placeholder="Full name" required="">
 
                                    <input type="email" name="email" class="form-control" placeholder="Your email address" required="">
 
@@ -191,21 +191,21 @@
                <div class="row">
 
                     <div class="col-md-6 col-sm-12">
-                         <form id="contact-form" role="form" action="" method="post">
+                         <form id="contact-form" role="form" action="/create/feedback" method="post">
                               <div class="section-title">
                                    <h2>Feedback<small>we love to know and improve. let us give feedback!</small></h2>
                               </div>
 
                               <div class="col-md-12 col-sm-12">
-                                   <input type="text" class="form-control" placeholder="Enter full name" name="name" required="">
+                                   <input type="text" class="form-control" placeholder="Enter full name" name="fullName" required="">
                     
                                    <input type="email" class="form-control" placeholder="Enter email address" name="email" required="">
 
-                                   <textarea class="form-control" rows="6" placeholder="Tell us" name="message" required=""></textarea>
+                                   <textarea class="form-control" rows="6" placeholder="Tell us" name="description" required=""></textarea>
                               </div>
 
                               <div class="col-md-4 col-sm-12">
-                                   <input type="submit" class="form-control" name="send message" value="Submit">
+                                   <input type="submit" class="form-control">
                               </div>
 
                          </form>

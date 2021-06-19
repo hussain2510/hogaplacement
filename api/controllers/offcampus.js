@@ -2,6 +2,7 @@ const mongoose=require("mongoose");
 const OffCampus=require("../models/offcampusModel");
 
 exports.create=(req,res)=>{
+    console.log("Asds");
     console.log(req.body);
     let newOffCampus=new OffCampus({
         title:req.body.title,
@@ -15,5 +16,8 @@ exports.create=(req,res)=>{
     res.send("successful");
 }
 exports.get_all_offcampus=(req,res)=>{
-    res.render("offCampus")
+    OffCampus.find(function(err,offcampus){
+        console.log(offcampus);
+        res.render("offCampus",{arrOffCampus:offcampus});
+    })
 }
