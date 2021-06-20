@@ -1,27 +1,30 @@
 <%- include("header") %>
-<% if(verified) {%> 
+<% if(appliedstatus && verified ) {%> 
 <div class="serv">
      <ul>
           <div class="container">
                <div class="row">
-                    <!-- the li items will be under the for loop -->
-                    <li >
-                         <div class="col-md-4 col-sm-4" >
-                              <div class="feature-thumb" >
-                                   <span>01</span>
-                                   <h3>Company: Microsoft</h3>
-                                   <h3>Package: 10 lpa</h3>
-                                   <h3>JD: Software Engineer</h3>
-                                   <h3>Link: <a href=""> Click me!</a></h3>
+                    <% arrOnCampus.forEach(function(onCampus){ %>
+                         <li >
+                              <div class="col-md-4 col-sm-4" >
+                                   <div class="feature-thumb" >
+                                        <span></span>
+                                        <h3>Company:<%=onCampus.title%></h3>
+                                        <h3>JD:<%=onCampus.description%></h3>
+                                        <h3>Validity:<%=onCampus.validity%></h3>
+                                        <h3>Link: <a href="<%=onCampus.link%>"> Click me!</a></h3>
+                                   </div>
                               </div>
-                         </div>
-
-                    </li>
-      
+                         </li>
+                         <% }) %> 
                </div>    
           </div>
      </ul>
 </div>
+<% }else if(appliedstatus==true && verified==false){ %>
+     <section>
+          <h1 style="text-align: center;">You will be verified soon by your college</h1>
+     </section>
 <% } else{ %>  
      <section style="margin: auto;width: 50%;" id="about">
           <div class="container">
@@ -30,13 +33,11 @@
                          <div class="entry-form">
                               <form action="/verification" method="post">
                                    <h2>Get Verified First!</h2>
-                                  <input type="text" name="name" class="form-control" placeholder="Your full name" required="">
+                                  <input type="text" name="collegename" class="form-control" placeholder="Your college Name" required="">
                                   <input type="text" name="roll" class="form-control" placeholder="Your roll number" required="">
                                   <input type="text" name="dept" class="form-control" placeholder="Your department name" required="">
                                    <button class="submit-btn form-control" id="form-submit">Verify by Admin</button>
                               </form>
-                              <p>Don't have an account?</p>
-                              <a style="color: aliceblue;" href="/signup">Sign up Now!</a>
                          </div>
                     </div>
       

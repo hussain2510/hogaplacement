@@ -3,6 +3,33 @@ require('dotenv').config();
 const bcrypt=require("bcrypt");
 const jwt=require("jsonwebtoken");
 const _ = require('lodash');
+
+exports.verification=async(req,res)=>{
+  console.log(req.body);
+  let data=req.body;
+  let collegename=data.collegename;
+  let rollnum=data.roll;
+  let dept=data.dept;
+  const token=req.cookies.jwt;
+    const verifiedUser=jwt.verify(token,process.env.TOKEN_SECRET);
+    const presentUser=await User.findById(verifiedUser._id);
+    console.log(presentUser._id);
+    
+    await User.findByIdAndUpdate({_id:verifiedUser._id},{college:collegename,rollNum:rollnum,department:dept,applyverification:true},function(err,user){
+      if (err) {
+        res.send({
+          error: err,
+          message: "Couldn't create new user", 
+          code: 400
+        })
+      }
+      else
+      {
+        res.redirect("/oncampus");
+      }
+    })
+    
+}
 exports.login = (req, res) => {
 
     let data=req.body;
@@ -18,25 +45,13 @@ exports.login = (req, res) => {
       if(!user)
       {
         console.log("user not found");
-        return res.status(401).json({
-          success:false,
-          title:'Login failed',
-          error:{
-            message:'invalid login credentials'
-          }
-        })
+        return res.status(401).redirect("/signup");
       }
       else if(user)
       { 
       if(!bcrypt.compareSync(data.password,user.password))
       {console.log("user found but password do not match");
-        return res.status(401).json({
-          success:false,
-          title:'wrong password',
-          error:{
-            message:'password does not match'
-          }
-        })
+        return res.status(401).redirect("/login");
       }
       if(bcrypt.compareSync(data.password,user.password))
       {

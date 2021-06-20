@@ -9,6 +9,6 @@ module.exports=async function (req,res,next){
         next();
     }
     catch(err){
-        res.status(401).render("login");
+        res.status(401).redirect("/login");
     }
 }

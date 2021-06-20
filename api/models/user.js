@@ -19,6 +19,18 @@ const UserSchema=new Schema({
     college:{
         type:String,
         default:""
+    },
+    applyverification:{
+        type:Boolean,
+        default:false
+    },
+    rollNum:{
+        type:Number,
+        default:0
+    },
+    department:{
+        type:String,
+        default:""
     }
 });
 module.exports=mongoose.model("User",UserSchema);
