@@ -13,5 +13,5 @@ exports.create=(req,res)=>{
     res.send("successful");
 }
 exports.getallOnCampus=(req,res)=>{
-        res.render("onCampus");
+        res.render("onCampus",{verified:false});
 }

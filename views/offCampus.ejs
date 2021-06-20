@@ -4,19 +4,18 @@
          
           <div class="container">
                <div class="row">
-                    <% for(int i=0;i<arrOffCampus.length;i++){ %> 
+                    <% arrOffCampus.forEach(function(offCampus){ %>
                     <li >
                          <div class="col-md-4 col-sm-4" >
                               <div class="feature-thumb" >
                                    <span></span>
-                                   <h3>Company:<%=arrOffCampus %>[i].title</h3>
-                                   <h3>JD:<%=arrOffCampus%>[i].description </h3>
-                                   <h3>Link: <a href="<%=arrOffCampus%>[i].link"> Click me!</a></h3>
+                                   <h3>Company:<%=offCampus.title%></h3>
+                                   <h3>JD:<%=offCampus.description%></h3>
+                                   <h3>Link: <a href="<%=offCampus.link%>"> Click me!</a></h3>
                               </div>
                          </div>
-
                     </li>
-                    <% } %> 
+                    <% }) %> 
       
                </div>    
           </div>
