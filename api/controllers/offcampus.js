@@ -18,6 +18,7 @@ exports.create=(req,res)=>{
 exports.get_all_offcampus=(req,res)=>{
     OffCampus.find(function(err,offcampus){
         console.log(offcampus);
+        console.log(offcampus);
         res.render("offCampus",{arrOffCampus:offcampus});
     })
 }

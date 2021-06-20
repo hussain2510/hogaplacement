@@ -1,39 +1,26 @@
 <%- include("header") %>
-<section id="feature">
-    <div class="container">
-         <div class="row">
+<div class="serv">
+     <ul>
+         
+          <div class="container">
+               <div class="row">
+                    <% for(int i=0;i<arrOffCampus.length;i++){ %> 
+                    <li >
+                         <div class="col-md-4 col-sm-4" >
+                              <div class="feature-thumb" >
+                                   <span></span>
+                                   <h3>Company:<%=arrOffCampus %>[i].title</h3>
+                                   <h3>JD:<%=arrOffCampus%>[i].description </h3>
+                                   <h3>Link: <a href="<%=arrOffCampus%>[i].link"> Click me!</a></h3>
+                              </div>
+                         </div>
 
-              <div class="col-md-4 col-sm-4" >
-                   <div class="feature-thumb" >
-                        <span>01</span>
-                        <h3>Company: Microsoft</h3>
-                        <h3>Package: 10 lpa</h3>
-                        <h3>JD: Software Engineer</h3>
-                        <h3>Link: <a href=""> Click me!</a></h3>
-                   </div>
-              </div>
-              <div class="col-md-4 col-sm-4" >
-               <div class="feature-thumb" >
-                    <span>01</span>
-                    <h3>Company: Microsoft</h3>
-                    <h3>Package: 10 lpa</h3>
-                    <h3>JD: Software Engineer</h3>
-                    <h3>Link: <a href=""> Click me!</a></h3>
-               </div>
-               <div class="col-md-4 col-sm-4" >
-                    <div class="feature-thumb" >
-                         <span>01</span>
-                         <h3>Company: Microsoft</h3>
-                         <h3>Package: 10 lpa</h3>
-                         <h3>JD: Software Engineer</h3>
-                         <h3>Link: <a href=""> Click me!</a></h3>
-                    </div>
-               </div>
-               
+                    </li>
+                    <% } %> 
+      
+               </div>    
           </div>
-              
-          </div>
-     </div>
-</section>
+     </ul>
+</div>
 
 <%- include("footer") %>

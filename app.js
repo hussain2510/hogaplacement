@@ -14,9 +14,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
-app.set('view engine', 'ejs');
-
-
+app.set('view engine','ejs');
 
 mongoose.connect("mongodb://localhost:27017/PlacementDB",{useNewUrlParser: true,useUnifiedTopology: true});
 
@@ -41,17 +39,6 @@ app.get("/login",function(req,res){
     res.render("login");
 });
 
-
 app.listen(3000, function(res){
     console.log("server started...");
 });
-
-
-
-
-
-
-
-
-
-

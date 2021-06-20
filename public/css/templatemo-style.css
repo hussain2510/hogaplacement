@@ -397,6 +397,7 @@
     border-radius: 22px;
     color: #ffffff;
     padding: 5em 3em;
+    margin: 20px 10px 10px 10px;
   }
 
 
@@ -417,6 +418,21 @@
   .feature-thumb h3 {
     margin: 10px 0;
     color: #ffffff;
+  }
+  .feature-thumb a {
+    background: transparent;
+    border-radius: 50px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: inherit;
+    font-weight: normal;
+    padding: 10px 20px;
+    transition: 0.5s;
+  }
+  .feature-thumb a:hover{
+    background:white;
+    color: black;
+    border-color: transparent;
   }
 
 
@@ -745,4 +761,14 @@
       height: inherit;
     }
   }
+
+  .serv ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+  }
   
+  .serv ul li {
+    list-style: none;
+    flex: 0 0 33.333333%;
+  }
