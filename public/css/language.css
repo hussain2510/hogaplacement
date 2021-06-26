@@ -1,0 +1,200 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+
+
+
+
+
+
+/* ****    */
+
+
+
+#language{
+  
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+#language h1{
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 28px;
+    color: green;
+}
+#language .container{
+   position: relative; 
+    width: 100%;
+    display:grid;
+    grid-template-columns: repeat(auto-fill,minmax(170px, 1fr));
+    grid-template-rows: auto;
+    grid-gap:0 40px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#language .container .box {
+    position: relative;
+    height: 380px;
+    background: #060c21;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    width: 220px;
+   
+
+}
+
+#language .container .box::before{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background:white;
+    transform: skew(2deg, 2deg);
+    
+    z-index: -1;
+}
+#language .container .box:nth-child(1)::before {
+    background: linear-gradient(315deg,#ff0057,#e64a19);
+}
+#language .container .box:nth-child(2)::before {
+    background: linear-gradient(315deg,green,yellow);
+}
+#language .container .box:nth-child(3)::before {
+    background: linear-gradient(315deg,orange,rgb(128, 0, 111));
+}
+#language .container .box:nth-child(4)::before {
+    background: linear-gradient(315deg,rgb(241, 4, 44),rgba(241, 42, 225, 0.836));
+}
+#language .content{
+    position: relative;
+    padding:20px;
+}
+
+#language .box .content h2{
+    position: absolute;
+    top:-60px;
+    right: 20px;
+    margin: 0;
+    padding: 0;
+    font-size: 10em;
+    color: rgba(255,255,255,.05);
+    color: rgba(255,255,255,.05);
+    transition: 0.5s;
+}
+#language .box:hover .content h2{
+    top: -140px;
+}
+
+#language .box .content .c{
+    position: absolute;
+    top:-60px;
+    right:60px;
+    padding-top: 48px;
+    
+    width:50%;
+    height:139px;
+    
+    
+    color: rgba(255,255,255,.05);
+    transition: 0.5s;
+}
+#language .box:hover .content .c{
+    top: -140px;
+}
+#language .box .content .cpp{
+    position: absolute;
+    top:-60px;
+    right:50px;
+    padding-top: 48px;
+    
+    width:50%;
+    height:139px;
+    
+    
+    color: rgba(255,255,255,.05);
+    transition: 0.5s;
+}
+#language .box:hover .content .cpp{
+    top: -140px;
+}
+#language .box .content .python{
+    position: absolute;
+    top:-60px;
+    right:52px;
+    padding-top: 78px;
+   
+    
+    width:50%;
+    height:160px;
+    
+    
+    color: rgba(255,255,255,.05);
+    transition: 0.5s;
+}
+
+
+#language .box:hover .content .python{
+    top: -140px;
+}
+#language .box .content .java{
+    position: absolute;
+    top:-60px;
+    right:55px;
+    padding-top: 48px;
+    
+    width:50%;
+    height:129px;
+    
+    
+    color: rgba(255,255,255,.05);
+    transition: 0.5s;
+}
+#language .box:hover .content .java{
+    top: -140px;
+}
+
+
+#language .box .content h3{
+    margin: 0 0 10px;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 500;
+    color:#fff;
+}
+
+
+#language .box .content a{
+    position: relative;
+    margin: 20px 0 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    border:1px solid #fff;
+    display: inline-block;
+    color: #fff;
+    transition: 0.5s;
+    transform: translateY(-40px);
+    opacity: 0;
+    visibility: hidden;
+}
+#language .box:hover .content a{
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+
+}
+#language .box .content a:hover{
+    color: #000;
+    background: #fff;
+}
+
+
+
+
+

@@ -39,6 +39,22 @@ app.get("/login",function(req,res){
     res.render("login");
 });
 
+app.get("/language",function(req,res){
+    res.render("language");
+});
+
+app.get("/developement",function(req,res){
+    res.render("developement");
+});
+
+app.get("/coding",function(req,res){
+    res.render("coding");
+});
+
+app.get("/placement",function(req,res){
+    res.render("placement");
+});
+
 app.listen(3000, function(res){
     console.log("server started...");
 });

@@ -1,0 +1,39 @@
+#placement{
+    background: url('https://images.unsplash.com/photo-1475669698648-2f144fcaaeb1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    height: 570px;
+    
+}
+
+#placement h2{
+    color: lightgreen;
+    font-size: 50px;
+    text-align: end;
+}
+#placement h1{
+    color: white;
+    font-weight: bold;
+    margin-top: -10px;
+    text-align: end;
+}
+
+.place-btn {
+    background: transparent;
+    border-radius: 30px;
+    margin-left: 78%;
+    border: 1px solid white;
+    color: white;
+    font-size: inherit;
+    font-weight: normal;
+    padding: 15px 30px;
+    transition: 0.5s;
+    
+  }
+
+  .place-btn:hover {
+    background:lightgreen;
+    border-color: transparent;
+    color:black;
+  }
+  html{
+      scroll-behavior: smooth;
+  }
