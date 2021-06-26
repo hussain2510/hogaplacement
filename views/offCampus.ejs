@@ -6,13 +6,13 @@
                <div class="row">
                     <% arrOffCampus.forEach(function(offCampus){ %>
                     <li >
-                         <div class="col-md-4 col-sm-4" >
-                              <div class="feature-thumb" >
+                         <div class="col-lg-4 col-md-6 col-sm-6" >
+                              <div class="feature-thumb" style="text-align: center;" >
                                    <span></span>
                                    <h3>Company:<%=offCampus.title%></h3>
-                                   <h3>JD:<%=offCampus.description%></h3>
-                                   <h3>Validity:<%=offCampus.validity%></h3>
-                                   <h3>Link: <a href="<%=offCampus.link%>"> Click me!</a></h3>
+                                   <h3>Job Description:<%=offCampus.description%></h3>
+                                   <h3>Last Date:<%=offCampus.validity%></h3>
+                                   <h3>Apply: <a href="<%=offCampus.link%>"> Click me!</a></h3>
                               </div>
                          </div>
                     </li>
