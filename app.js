@@ -57,6 +57,6 @@ app.get("/placement",function(req,res){
     res.render("placement");
 });
 
-app.listen(process.env.LOCAL_PORT || 4000, function(res){
+app.listen(process.env.PORT || 4000, function(res){
     console.log("server started...");
 });
