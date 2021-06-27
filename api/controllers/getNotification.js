@@ -8,12 +8,13 @@ require('dotenv').config();
 async function sendNotification(details){
     //console.log("send mail");
     let textToSend=JSON.stringify(details);
-    let htmlText=`<h2>Thanks for registering with us.
-    </h2>`;  //``for multiline string
+    let htmlText=`<h2>Thanks for subscribing us.
+    <p style="color:light-grey;">we will let you know every latest job oppurtunities for both off campus as well as on campus.</p>
+    </h2><br><h3>You can also prepare yourself for the placements all the resources are available on the website</h3><h3>Regards,</h3><p>Hoga Placement</p>`;  //``for multiline string
     let info={
         from:'broforfunofficial@gmail.com',
         to:""+details.email,
-        subject:'Successfully registered',
+        subject:'Jobs Notification',
         text:textToSend,
         html:htmlText,
   
@@ -39,8 +40,8 @@ exports.create=(req,res)=>{
             'fullName',
             'email',
           ]);
-          sendNotification(userFiltered);
-          res.status(201).redirect("/");
+         sendNotification(userFiltered);
+          res.redirect("/");
         }
     });
     res.redirect("/");
