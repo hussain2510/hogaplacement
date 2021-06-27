@@ -6,13 +6,13 @@
                <div class="row">
                     <% arrOnCampus.forEach(function(onCampus){ %>
                          <li >
-                              <div class="col-md-4 col-sm-4" >
-                                   <div class="feature-thumb" >
+                              <div class="col-lg-4 col-md-6 col-sm-6" >
+                                   <div class="feature-thumb box-style" style="text-align: center;">
                                         <span></span>
-                                        <h3>Company:<%=onCampus.title%></h3>
-                                        <h3>JD:<%=onCampus.description%></h3>
-                                        <h3>Validity:<%=onCampus.validity%></h3>
-                                        <h3>Link: <a href="<%=onCampus.link%>"> Click me!</a></h3>
+                                        <h3><%=onCampus.title%></h3>
+                                        <h3>Job Description<p><%=onCampus.description%></p></h3>
+                                        <h3>Last Date<p><%=onCampus.validity%></p></h3>
+                                        <a style="margin-top: 2px;border-color: black; color:black;" href="<%=onCampus.link%>">Apply</a>
                                    </div>
                               </div>
                          </li>

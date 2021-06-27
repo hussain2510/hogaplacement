@@ -7,12 +7,12 @@
                     <% arrOffCampus.forEach(function(offCampus){ %>
                     <li >
                          <div class="col-lg-4 col-md-6 col-sm-6" >
-                              <div class="feature-thumb" style="text-align: center;" >
+                              <div class="feature-thumb box-style" style="text-align: center;" >
                                    <span></span>
-                                   <h3>Company:<%=offCampus.title%></h3>
-                                   <h3>Job Description:<%=offCampus.description%></h3>
-                                   <h3>Last Date:<%=offCampus.validity%></h3>
-                                   <h3>Apply: <a href="<%=offCampus.link%>"> Click me!</a></h3>
+                                   <h3><%=offCampus.title%></h3>
+                                   <h3>Job Description<p><%=offCampus.description%></p></h3>
+                                   <h3>Last Date<p><%=offCampus.validity%></p></h3>
+                                   <a style="margin-top: 2px;border-color: black; color:black;" href="<%=offCampus.link%>">Apply</a>
                               </div>
                          </div>
                     </li>

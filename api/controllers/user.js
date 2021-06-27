@@ -5,7 +5,7 @@ const jwt=require("jsonwebtoken");
 const _ = require('lodash');
 
 exports.verification=async(req,res)=>{
-  console.log(req.body);
+  //console.log(req.body);
   let data=req.body;
   let collegename=data.collegename;
   let rollnum=data.roll;
@@ -13,15 +13,15 @@ exports.verification=async(req,res)=>{
   const token=req.cookies.jwt;
     const verifiedUser=jwt.verify(token,process.env.TOKEN_SECRET);
     const presentUser=await User.findById(verifiedUser._id);
-    console.log(presentUser._id);
+    //console.log(presentUser._id);
     
     await User.findByIdAndUpdate({_id:verifiedUser._id},{college:collegename,rollNum:rollnum,department:dept,applyverification:true},function(err,user){
       if (err) {
-        res.send({
-          error: err,
-          message: "Couldn't create new user", 
-          code: 400
-        })
+        // res.send({
+        //   error: err,
+        //   message: "Couldn't create new user", 
+        //   code: 400
+        // })
       }
       else
       {
@@ -44,18 +44,19 @@ exports.login = (req, res) => {
       }
       if(!user)
       {
-        console.log("user not found");
+        //console.log("user not found");
         return res.status(401).redirect("/signup");
       }
       else if(user)
       { 
       if(!bcrypt.compareSync(data.password,user.password))
-      {console.log("user found but password do not match");
-        return res.status(401).redirect("/login");
+      {//console.log("user found but password do not match");
+        return         res.send("<h3>Wrong Password</h3><br><a href='/login'>login Again</a>");
+
       }
       if(bcrypt.compareSync(data.password,user.password))
       {
-        console.log("password matched")
+        //console.log("password matched")
         let userFiltered = _.pick(user.toObject(), [
         'fullname',
         'email',
@@ -84,7 +85,7 @@ exports.login = (req, res) => {
     })
   }
 exports.signUp= (req, res) => {
-    console.log("fromclient");
+    //console.log("fromclient");
     if(req.body.fullname && req.body.email && req.body.password)
     { 
         const newUser=new User({
@@ -94,11 +95,13 @@ exports.signUp= (req, res) => {
         })
     newUser.save(async(err,user)=>{
       if (err) {
-        res.send({
-          error: err,
-          message: "Couldn't create new user", 
-          code: 400
-        });
+        // res.send({
+        //   error: err,
+        //   message: "Couldn't create new user", 
+        //   code: 400
+        // });
+        res.send("<h3>User already exists</h3><br><a href='/signup'>SignUp Again</a>");
+
       }
       if(user)
       {

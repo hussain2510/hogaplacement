@@ -634,8 +634,19 @@
     color: #ffffff;
   }
 
+  .box-style{
+    box-shadow: 4px 4px 4px 5px #252020;background-color: white;
+  }
 
-
+.box-style h3{
+  color: #000000;
+  font-size: 30px;
+}
+.box-style h3 p{
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px;
+}
   /*---------------------------------------
      RESPONSIVE STYLES              
   -----------------------------------------*/
@@ -645,7 +656,6 @@
       margin-left: inherit;
     }
   }
-
   @media only screen and (max-width: 992px) {
     section,
     footer {
@@ -777,8 +787,14 @@
     flex: 0 0 33.333333%;
   }
 
-
-  
-
-  
-  
+@media screen and (max-width:1200px) {
+  #language .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #language .container .box{
+    margin-top: 150px;
+  }
+  }

@@ -741,3 +741,19 @@
   #courses{
     padding-top: 20px;
   }
+  @media  screen and (max-width:1260px) {
+    .list-inline{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+    }
+    .list-inline li{
+      display: flex;
+      margin: 20px;
+    }
+    .l{
+      width: 100%;
+    }
+  }
