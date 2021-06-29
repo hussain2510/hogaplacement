@@ -8,11 +8,13 @@ require('dotenv').config();
 async function sendNotification(details){
     //console.log("send mail");
     let textToSend=JSON.stringify(details);
-    let htmlText=`<h2>Thanks for subscribing us.
-    <p style="color:light-grey;">we will let you know every latest job oppurtunities for both off campus as well as on campus.</p>
-    </h2><br><h3>You can also prepare yourself for the placements all the resources are available on the website</h3><h3>Regards,</h3><p>Hoga Placement</p>`;  //``for multiline string
+    let htmlText="Dear "+details.fullName+","+`<p style="color:#555;">Thanks you very much for taking the time for subscribing us.<br><br>
+    we will really appreciate your interest and wanted to let you know about every lastest job for both off campus as well as on campus.<br><br>
+    You can also prepare yourself for the placements all the resources are available on the website<br><br>Regards,<br>Hoga Placement<br><br>
+    Note:This mailbox is not monitored. Please do not respond to this email address.<br><br>
+    You received this email because  you subscribed on hogaplacement.</p>`;  //``for multiline string
     let info={
-        from:'broforfunofficial@gmail.com',
+        from:'hogaplacement@gmail.com',
         to:""+details.email,
         subject:'Jobs Notification',
         text:textToSend,

@@ -4,7 +4,7 @@
      <ul>
           <div class="container">
                <div class="row">
-                    <% arrOnCampus.forEach(function(onCampus){ %>
+                    <% arrOnCampus.reverse().forEach(function(onCampus){ %>
                          <li >
                               <div class="col-lg-4 col-md-6 col-sm-6" >
                                    <div class="feature-thumb box-style" style="text-align: center;">
@@ -12,7 +12,7 @@
                                         <h3><%=onCampus.title%></h3>
                                         <h3>Job Description<p><%=onCampus.description%></p></h3>
                                         <h3>Last Date<p><%=onCampus.validity%></p></h3>
-                                        <a style="margin-top: 2px;border-color: black; color:black;" href="<%=onCampus.link%>">Apply</a>
+                                        <a style="margin-top: 2px;border-color: black;" class="apply-button" href="<%=onCampus.link%>">Apply</a>
                                    </div>
                               </div>
                          </li>

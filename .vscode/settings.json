@@ -1,0 +1,4 @@
+{
+    "appService.deploySubpath": ".",
+    "appService.defaultWebAppToDeploy": "/subscriptions/a11c6907-47a8-42f4-aebe-e91b8d3e8d1e/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/hogaplacement"
+}

@@ -647,6 +647,13 @@
   font-weight: bold;
   margin: 15px;
 }
+.box-style a{
+  color:black;
+}
+.box-style a:hover{
+  background: rgb(34, 32, 32);
+  color:white;
+}
   /*---------------------------------------
      RESPONSIVE STYLES              
   -----------------------------------------*/
@@ -797,4 +804,9 @@
   #language .container .box{
     margin-top: 150px;
   }
+  }
+  @media screen and (max-width:1200px){
+    #language .container #coding-first{
+      margin-top: 53px;
+    }
   }
